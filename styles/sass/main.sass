@@ -1,0 +1,77 @@
+@use './variables'
+@use './mixin'
+
+main
+    .profile
+        position: fixed
+        background-color: #2e2d2d
+        height: 100%
+        width: 20vw
+        border-radius: 0px 20px 20px 0px
+        border-right: variables.$secondary-color solid 2px
+
+        .about
+            @include mixin.container-profile
+            display: flex
+            flex-direction: column
+            align-items: center
+            text-align: center
+            padding-top: 5%
+
+            img
+                width: 100px
+                height: 100px
+                border-radius: 50%
+                border: variables.$secondary-color solid 3px
+
+            h1
+                padding: 5px
+
+        .infos
+            @include mixin.container-profile
+
+            li i
+                font-size: 1.25em
+                margin-right: 10px
+
+        .technologies
+            @include mixin.container-profile
+
+            // li input
+            //     margin-right: 10px
+
+            li
+                font-weight: bolder
+
+    .projects
+        display: flex
+        justify-content: space-between
+        margin-left: 23vw
+
+        .project
+            background-color: #2e2d2d
+            padding: 10px 20px
+            width: 45%
+            border-radius: 10px
+            border: variables.$secondary-color solid 1px
+
+            h2
+                text-align: center
+                padding-bottom: 10px
+
+                i
+                    margin-right: 10px
+
+            footer
+                display: flex
+                justify-content: space-between
+                margin-top: 5px
+                padding: 10px
+
+                span
+                    font-weight: bolder
+
+                .links a i
+                    font-size: 1.5em
+                    padding-left: 5px
+
