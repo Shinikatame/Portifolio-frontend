@@ -10,13 +10,13 @@ const Projects = () => {
             <footer>
                 <span>TypeScript</span>
                 <div className={styles.links}>
-                    <a href="https://github.com/Shinikatame/AniSearch" target="_blank">
+                    <a href="https://github.com/Shinikatame/AniSearch" target="_blank" rel="noreferrer">
                         <i>
                             <BiCodeAlt />
                         </i>
                     </a>
 
-                    <a href="https://anisearch-tau.vercel.app/" target="_blank">
+                    <a href="https://anisearch-tau.vercel.app/" target="_blank" rel="noreferrer">
                         <i>
                             <BiNavigation />
                         </i>
