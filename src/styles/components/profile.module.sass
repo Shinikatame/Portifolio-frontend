@@ -1,0 +1,66 @@
+@use '../variables'
+@use '../mixin'
+
+$margin-left: 30px
+
+.profile
+    background-color: variables.$secondary-color
+
+    .about
+        @include mixin.container-profile
+        @include mixin.flex-column
+        align-items: center
+        padding-top: 30px
+
+        img
+            width: 100px
+            height: 100px
+            border-radius: 50%
+            border: variables.$tertiary-color solid 3px
+
+        h1
+            padding: 5px
+
+@media only screen and (min-width: 1100px)
+        .profile
+            height: 100%
+            width: 20vw
+            margin-left: $margin-left
+            border-radius: 10px
+            border: variables.$tertiary-color solid 2px
+
+            .infos
+                @include mixin.container-profile
+                @include mixin.flex-column
+
+                li 
+                    padding: 5px 0
+                    margin-left: $margin-left
+
+                    i
+                        color: white
+                        font-size: 1.5em
+                        margin-right: 10px
+
+            .technologies
+                @include mixin.container-profile
+                @include mixin.flex-column
+                margin-left: 20px
+
+@media only screen and (max-width: 1099px)
+    .profile
+        border: variables.$tertiary-color solid 1px
+
+        .infos
+            @include mixin.container-profile
+            text-align: center
+            font-size: 1.25em
+
+            li i
+                margin-right: 10px
+
+        .technologies
+            text-align: center
+
+            li
+                margin-bottom: 10px
