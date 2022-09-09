@@ -1,1 +1,0 @@
-{"version":3,"sources":["../sass/global.sass","global.css","../sass/variables.sass","../sass/mixin.sass"],"names":[],"mappings":"AAEQ,2EAAA;AAER;EACI,UAAA;EACA,SAAA;EACA,+BAAA;EACA,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,iCAAA;ACFJ;;ADIA;EACI,yBEdS;ADab;;ADGA;EACI;IGNA,aAAA;IACA,mBAAA;IHOI,eAAA;IACA,YAAA;IACA,WAAA;ECCN;AACF","file":"global.css"}
