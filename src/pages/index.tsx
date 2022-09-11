@@ -1,8 +1,9 @@
-import type { NextPage, GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next'
 import axios from "axios"
 
 import Profile from '../components/Profile'
 import Projects from '../components/Projects'
+
 import { Github } from '../Interfaces/Data'
 
 export default function Home( {data}: {data: Github} ) {
