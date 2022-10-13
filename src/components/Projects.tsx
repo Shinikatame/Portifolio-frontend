@@ -1,37 +1,41 @@
-import styles from "../styles/components/projects.module.sass"
-import { BiCodeAlt, BiNavigation } from "react-icons/bi"
+import styles from "../styles/components/projects.module.sass";
+import { BiCodeAlt, BiNavigation } from "react-icons/bi";
 
-const Projects = () => {
-    return (
+import { ReposProps } from "../Interfaces/Repos";
+
+const Projects = (props: ReposProps) => {
+  return (
     <div className={styles.projects}>
-        <div className={styles.project}>
-            <h2>AniSearch</h2>
-            <p>Pesquisa de animes usando ReactTS, NextTS, Sass, GraphQL ( Anilist API )</p>
-            <footer>
-                <span>TypeScript</span>
-                <div className={styles.links}>
-                    <a href="https://github.com/Shinikatame/AniSearch" target="_blank" rel="noreferrer">
-                        <i>
-                            <BiCodeAlt />
-                        </i>
-                    </a>
 
-                    <a href="https://anisearch-tau.vercel.app/" target="_blank" rel="noreferrer">
-                        <i>
-                            <BiNavigation />
-                        </i>
-                    </a>
-                </div>
+        {props.data.map(repo => { return (
+        <div className={styles.project} key={styles.project}>
+
+            <h2>{repo.name.replace('-', ' ')}</h2>
+            <p>{repo.description}</p>
+
+            <footer>
+                <span>{repo.primaryLanguage}</span>
+
+                { repo.homepageUrl &&
+                <a href={repo.homepageUrl} target="_blank" rel="noreferrer">
+                    <i><BiNavigation /></i>
+                </a>
+                }
+
+                <a href={repo.url} target="_blank" rel="noreferrer">
+                    <i><BiCodeAlt /></i>
+                </a>
             </footer>
         </div>
+        )})}
 
-        <div className={styles.project}>
-            <h2>Em breve</h2>
-            <p>Trabalhando em novos projetos</p>
-        </div>
+       <div className={styles.project}>
+         <h2>Em breve</h2>
+         <p>Trabalhando em novos projetos</p>
+       </div>
+       
     </div>
-    )
-}
-  
-export default Projects
-  
+  );
+};
+
+export default Projects;

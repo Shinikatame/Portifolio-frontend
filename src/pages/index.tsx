@@ -1,28 +1,35 @@
-import type { GetStaticProps } from 'next'
-import axios from "axios"
+import type { GetStaticProps } from "next";
+import axios from "axios";
 
-import Profile from '../components/Profile'
-import Projects from '../components/Projects'
+import Profile from "../components/Profile";
+import Projects from "../components/Projects";
 
-import { Github } from '../Interfaces/Data'
+import { AboutMe } from "../Interfaces/AboutMe";
+import { Repos } from "../Interfaces/Repos";
 
-export default function Home( {data}: {data: Github} ) {
+export default function Home({aboutMe, repos}: {aboutMe: AboutMe, repos: Repos}){
   return (
     <main id="root">
-      <Profile github={ data }/>
-      <Projects />
+      <Profile data={aboutMe} />
+      <Projects data={repos} />
     </main>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await axios("https://api.github.com/users/Shinikatame")
-  const dataGh: Github = await response.data
+  const urlBase = "https://portifolio-api.onrender.com";
+
+  const aboutMeQuery = await axios(`${urlBase}/aboutme`);
+  const aboutMe: AboutMe = await aboutMeQuery.data;
+
+  const reposQuery = await axios(`${urlBase}/projects`);
+  const repos: Repos = await reposQuery.data;
 
   return {
-      props: {
-          data: dataGh
-      },
-      revalidate: 60*60*24
-  }
-}
+    props: {
+      aboutMe: aboutMe,
+      repos: repos,
+    },
+    revalidate: 60 * 60 * 24,
+  };
+};
