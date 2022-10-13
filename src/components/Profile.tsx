@@ -34,7 +34,7 @@ const Profile = (props: AboutMeProps) => {
             <GrLinkedinOption />
           </i>
           <a
-            href="https://www.linkedin.com/in/hudson-shinikatame/"
+            href="https://www.linkedin.com/in/hudsonfarias/"
             target="_blank"
             rel="noreferrer"
           >
